@@ -1,0 +1,111 @@
+/* CONTACT FOOTER, TOAST NOTIFICATION & RESPONSIVE BREAKPOINTS= */
+
+/* Studio Footer */
+.studio-footer {
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-logo-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.footer-brand {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--text-color);
+    letter-spacing: 0.06em;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+.footer-right a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Toast Popup */
+.studio-toast-popup {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 10000;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(10, 14, 24, 0.96);
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    color: #f8fafc;
+    font-size: 0.82rem;
+    font-weight: 600;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    max-width: calc(100vw - 48px);
+}
+
+.studio-toast-popup.is-error {
+    border-color: rgba(239, 68, 68, 0.55);
+}
+
+.toast-icon {
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+.toast-icon.error {
+    color: #ef4444;
+}
+
+@media (max-width: 1024px) {
+    .studio-quote-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .wizard-service-grid,
+    .wizard-extras-chips {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+
+    .wizard-service-grid,
+    .wizard-extras-chips {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wizard-inputs-row {
+        grid-template-columns: 1fr;
+    }
+
+    .studio-wizard-card {
+        padding: 16px;
+    }
+
+    .wizard-step-note-pill {
+        display: none;
+    }
+}
