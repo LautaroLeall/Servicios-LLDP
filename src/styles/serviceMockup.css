@@ -1,0 +1,9 @@
+/* SERVICE MOCKUPS — MODULAR ROOT INDEX */
+
+@import './mockups/mockupBase.css';
+@import './mockups/mockupWeb.css';
+@import './mockups/mockupSistema.css';
+@import './mockups/mockupEcommerce.css';
+@import './mockups/mockupInvitaciones.css';
+@import './mockups/mockupMejora.css';
+@import './mockups/mockupPresupuesto.css';

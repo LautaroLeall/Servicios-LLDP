@@ -1,0 +1,159 @@
+/* 02. SISTEMAS DE GESTIÓN MOCKUP */
+
+.sistema-dashboard-window {
+    position: relative;
+    z-index: 1;
+    background: rgba(15, 23, 42, 0.92);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    border-radius: 13px;
+    padding: 11px;
+}
+
+.sistema-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    flex-wrap: nowrap;
+}
+
+.sistema-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #c4b5fd;
+    white-space: nowrap;
+}
+
+.sistema-sync-badge {
+    font-size: 0.58rem;
+    color: #34d399;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sistema-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.sistema-kpi-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9px;
+    padding: 7px;
+}
+
+.kpi-head {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: #a78bfa;
+    white-space: nowrap;
+}
+
+.kpi-value {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 2px 0;
+    white-space: nowrap;
+}
+
+.kpi-sub {
+    font-size: 0.54rem;
+    color: #94a3b8;
+    white-space: nowrap;
+}
+
+.sistema-schedule-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 9px;
+    padding: 7px 9px;
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #ddd6fe;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+.schedule-count {
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.schedule-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.schedule-row {
+    display: grid;
+    grid-template-columns: 38px 1fr 1fr auto;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.58rem;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+}
+
+.schedule-row.is-clickable {
+    cursor: pointer;
+}
+
+.schedule-row.is-clickable:hover {
+    background: rgba(139, 92, 246, 0.14);
+}
+
+.s-time {
+    font-family: var(--font-mono);
+    color: #c4b5fd;
+    font-weight: 700;
+}
+
+.s-client {
+    color: #f8fafc;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.s-service {
+    color: #94a3b8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.s-status {
+    padding: 2px 6px;
+    border-radius: 99px;
+    font-size: 0.52rem;
+    font-weight: 700;
+}
+
+.s-status.ok {
+    background: rgba(16, 185, 129, 0.18);
+    color: #34d399;
+}
+
+.s-status.pending {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+}

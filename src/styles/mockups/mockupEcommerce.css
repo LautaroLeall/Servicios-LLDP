@@ -1,0 +1,198 @@
+/* 03. TIENDA ONLINE MOCKUP */
+
+.new-sale-toast {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: rgba(6, 78, 59, 0.95);
+    border: 1px solid rgba(52, 211, 153, 0.55);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+    animation: floatPulse 3s ease-in-out infinite;
+}
+
+@keyframes floatPulse {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.sale-icon-box {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: #10b981;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sale-toast-text {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.sale-title {
+    font-size: 0.64rem;
+    font-weight: 800;
+    color: #ecfdf5;
+}
+
+.sale-meta {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #6ee7b7;
+}
+
+.ecom-store-window {
+    position: relative;
+    z-index: 1;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(16, 185, 129, 0.28);
+    border-radius: 13px;
+    padding: 11px;
+    margin-top: 16px;
+}
+
+.ecom-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.ecom-brand {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #34d399;
+    white-space: nowrap;
+}
+
+.ecom-cart-pill {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: rgba(16, 185, 129, 0.16);
+    color: #6ee7b7;
+    font-size: 0.62rem;
+    font-weight: 700;
+}
+
+.ecom-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    margin-bottom: 8px;
+}
+
+.ecom-product-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.ecom-prod-thumb {
+    position: relative;
+    height: 40px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(59, 130, 246, 0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a7f3d0;
+}
+
+.ecom-prod-tag {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    font-size: 0.48rem;
+    font-weight: 800;
+    padding: 1px 4px;
+    border-radius: 3px;
+    background: #10b981;
+    color: #fff;
+}
+
+.ecom-prod-name {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #f8fafc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ecom-prod-price {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    font-weight: 800;
+    color: #34d399;
+    white-space: nowrap;
+}
+
+.ecom-add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px 5px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(16, 185, 129, 0.22);
+    color: #ecfdf5;
+    font-size: 0.56rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.ecom-add-btn:hover,
+.ecom-add-btn.is-added {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.ecom-admin-footer {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    padding-top: 7px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    white-space: nowrap;
+}
+
+.admin-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.56rem;
+    color: #cbd5e1;
+}

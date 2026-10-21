@@ -1,0 +1,75 @@
+/* SERVICE MOCKUPS — BASE CONTAINER & AMBIENT GLOWS */
+
+.srv-mockup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 270px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(155deg, rgba(9, 12, 22, 0.94) 0%, rgba(15, 20, 35, 0.96) 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: var(--font-sans);
+    user-select: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.srv-mockup.is-large {
+    min-height: 340px;
+    padding: 20px;
+}
+
+.App.light .srv-mockup {
+    background: linear-gradient(155deg, #0d1322 0%, #151e34 100%);
+    color: #f8fafc;
+}
+
+.mockup-ambient-glow {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    filter: blur(55px);
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-blue {
+    background: #06b6d4;
+    top: -40px;
+    right: -40px;
+}
+
+.glow-pink {
+    background: #f43f5e;
+    top: -30px;
+    left: 20%;
+}
+
+.glow-emerald {
+    background: #10b981;
+    bottom: -40px;
+    right: -20px;
+}
+
+.glow-violet {
+    background: #6366f1;
+    top: -30px;
+    left: -30px;
+}
+
+.glow-cyan {
+    background: #22d3ee;
+    bottom: -30px;
+    left: 30%;
+}
+
+.glow-amber {
+    background: #f59e0b;
+    top: -30px;
+    right: -20px;
+}
