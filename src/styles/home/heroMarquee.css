@@ -1,0 +1,87 @@
+/* HERO MARQUEE & RESPONSIVE BREAKPOINTS */
+
+/* Bottom Marquee Ticker */
+.studio-marquee-bar {
+    width: 100%;
+    padding: 11px 0;
+    background: rgba(10, 14, 24, 0.78);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.App.light .studio-marquee-bar {
+    background: rgba(241, 245, 249, 0.9);
+}
+
+.studio-marquee-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 32px;
+    animation: studioMarqueeScroll 30s linear infinite;
+}
+
+@keyframes studioMarqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+}
+
+.marquee-star {
+    color: var(--accent-primary);
+}
+
+/* Responsive Queries for Hero Section */
+@media (max-width: 991px) {
+    .studio-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hero-service-selector-grid,
+    .studio-hero-cta-group,
+    .hero-trust-strip {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .studio-hero-wrapper {
+        padding-top: 84px;
+    }
+
+    .hero-service-selector-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .studio-hero-cta-group {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+    }
+
+    .btn-studio-primary,
+    .btn-studio-whatsapp {
+        padding: 12px 14px;
+        font-size: 0.82rem;
+    }
+
+    .deck-active-card {
+        padding: 14px;
+    }
+}
