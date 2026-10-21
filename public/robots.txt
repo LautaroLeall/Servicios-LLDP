@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://servicios-lldp.vercel.app/sitemap.xml
