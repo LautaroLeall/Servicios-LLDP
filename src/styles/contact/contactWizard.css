@@ -1,0 +1,411 @@
+/* CONTACT WIZARD & STEP FORM STYLES */
+
+.studio-contact-section {
+    position: relative;
+}
+
+.studio-quote-layout {
+    display: grid;
+    grid-template-columns: 1.45fr 0.85fr;
+    gap: 22px;
+    align-items: start;
+}
+
+/* Wizard Card */
+.studio-wizard-card {
+    padding: 24px;
+    border-color: rgba(34, 211, 238, 0.24);
+}
+
+.wizard-step-block {
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.wizard-step-header {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 12px;
+    flex-wrap: nowrap;
+}
+
+.wizard-step-num {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 99px;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(99, 102, 241, 0.2));
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.wizard-step-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wizard-step-note-pill {
+    margin-left: auto;
+    padding: 3px 9px;
+    border-radius: 99px;
+    background: rgba(99, 102, 241, 0.14);
+    border: 1px solid rgba(129, 140, 248, 0.3);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #a5b4fc;
+    white-space: nowrap;
+}
+
+.App.light .wizard-step-note-pill {
+    background: rgba(79, 70, 229, 0.08);
+    color: #4f46e5;
+}
+
+/* Step 1 Service Options (Single-Line Compact Pills) */
+.wizard-service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.wizard-srv-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    min-width: 0;
+    white-space: nowrap;
+}
+
+.App.light .wizard-srv-option {
+    background: rgba(15, 23, 42, 0.025);
+}
+
+.wizard-srv-option:hover {
+    border-color: var(--opt-accent, #22d3ee);
+    transform: translateY(-2px);
+}
+
+.wizard-srv-option.active {
+    background: rgba(6, 182, 212, 0.12);
+    border-color: var(--opt-accent, #22d3ee);
+    box-shadow: 0 8px 20px -8px rgba(6, 182, 212, 0.35);
+}
+
+.App.light .wizard-srv-option.active {
+    background: #ffffff;
+}
+
+.opt-num {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--opt-accent, #22d3ee);
+    flex-shrink: 0;
+}
+
+.App.light .opt-num {
+    background: rgba(15, 23, 42, 0.06);
+}
+
+.opt-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Step 2 Extras Multi-select (Single Line Chips) */
+.wizard-extras-chips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.wizard-extra-chip {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 11px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    min-width: 0;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.wizard-extra-chip span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.App.light .wizard-extra-chip {
+    background: rgba(15, 23, 42, 0.025);
+}
+
+.wizard-extra-chip:hover {
+    color: var(--text-color);
+    border-color: rgba(34, 211, 238, 0.3);
+}
+
+.wizard-extra-chip.checked {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.45);
+    color: var(--text-color);
+}
+
+.extra-chip-icon {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.wizard-extra-chip.checked .extra-chip-icon {
+    color: #10b981;
+}
+
+/* Timeline Row */
+.wizard-timeline-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 6px;
+    flex-wrap: nowrap;
+}
+
+.timeline-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.timeline-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
+}
+
+.timeline-pill-btn {
+    padding: 6px 12px;
+    border-radius: 99px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    font-size: 0.74rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.timeline-pill-btn.active {
+    background: rgba(99, 102, 241, 0.18);
+    border-color: rgba(129, 140, 248, 0.45);
+    color: var(--text-color);
+}
+
+/* Step 3 Inputs */
+.wizard-inputs-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.wizard-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.wizard-input-group label {
+    font-size: 0.73rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.req-hint {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.wizard-input-group input {
+    width: 100%;
+    padding: 9px 13px;
+    border-radius: 11px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.035);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.App.light .wizard-input-group input {
+    background: #ffffff;
+}
+
+.wizard-input-group input:focus {
+    border-color: var(--accent-primary);
+}
+
+.wizard-input-group input.has-error {
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.06);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14);
+}
+
+.wizard-field-error {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #f87171;
+    line-height: 1.2;
+}
+
+.App.light .wizard-field-error {
+    color: #dc2626;
+}
+
+/* Live Preview Box */
+.wizard-live-preview {
+    padding: 12px 14px;
+    border-radius: 13px;
+    background: rgba(6, 9, 18, 0.78);
+    border: 1px solid rgba(34, 211, 238, 0.24);
+}
+
+.App.light .wizard-live-preview {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.preview-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    gap: 6px;
+}
+
+.preview-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #22d3ee;
+    white-space: nowrap;
+}
+
+.preview-ready {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #34d399;
+    white-space: nowrap;
+}
+
+.preview-text {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    line-height: 1.45;
+    color: #e2e8f0;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+/* Submit Actions (Single Row) */
+.wizard-submit-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.btn-wizard-whatsapp {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 12px 26px rgba(16, 185, 129, 0.32);
+    transition: all 0.25s ease;
+}
+
+.btn-wizard-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(16, 185, 129, 0.45);
+}
+
+.btn-wizard-email {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.22s ease;
+}
+
+.btn-wizard-email:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
