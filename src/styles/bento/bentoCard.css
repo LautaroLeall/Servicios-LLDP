@@ -1,0 +1,303 @@
+/* BENTO CARD — 12-Column Grid, Bento Card Structure, Mockup Stage & Actions */
+
+/* 12-Column Bento Grid */
+.studio-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.bento-span-7 {
+    grid-column: span 7;
+}
+
+.bento-span-6 {
+    grid-column: span 6;
+}
+
+.bento-span-5 {
+    grid-column: span 5;
+}
+
+.studio-bento-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+    min-width: 0;
+}
+
+.studio-bento-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--srv-accent, #22d3ee);
+}
+
+/* Single-Line Card Topbar */
+.bento-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.bento-num-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.bento-num-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--srv-accent, #22d3ee);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    flex-shrink: 0;
+}
+
+.App.light .bento-num-badge {
+    background: rgba(15, 23, 42, 0.05);
+    border-color: rgba(15, 23, 42, 0.1);
+}
+
+.bento-category-chip {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--srv-accent, #22d3ee);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bento-seal-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--srv-accent, #22d3ee);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.App.light .bento-seal-tag {
+    background: rgba(15, 23, 42, 0.05);
+    border-color: rgba(15, 23, 42, 0.1);
+}
+
+/* Single-Line Headline & Subtitle */
+.bento-card-head {
+    min-width: 0;
+}
+
+.bento-main-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 1.9vw, 1.38rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin-bottom: 4px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bento-main-title:hover {
+    color: var(--srv-accent, #22d3ee);
+}
+
+.bento-subtitle-text {
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Mockup Stage */
+.bento-mockup-container {
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.bento-mockup-container:hover {
+    transform: scale(1.01);
+}
+
+/* Single-Line Features Box */
+.bento-features-box {
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--border-subtle);
+}
+
+.App.light .bento-features-box {
+    background: rgba(15, 23, 42, 0.025);
+}
+
+.bento-features-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px 10px;
+}
+
+.bento-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-color);
+    min-width: 0;
+}
+
+.bento-feature-item span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bento-feat-icon {
+    color: var(--srv-accent, #22d3ee);
+    flex-shrink: 0;
+}
+
+/* Card Actions: Single Horizontal Row Always */
+.bento-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-subtle);
+    flex-wrap: nowrap;
+}
+
+.bento-btn-quote {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.bento-btn-quote:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(6, 182, 212, 0.35);
+}
+
+.bento-secondary-btns {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.bento-btn-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-color);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    flex-shrink: 0;
+}
+
+.App.light .bento-btn-icon {
+    background: rgba(15, 23, 42, 0.04);
+}
+
+.bento-btn-icon:hover {
+    border-color: var(--srv-accent, #22d3ee);
+    color: var(--srv-accent, #22d3ee);
+    transform: translateY(-2px);
+}
+
+.bento-btn-icon.wa {
+    background: rgba(16, 185, 129, 0.14);
+    border-color: rgba(16, 185, 129, 0.32);
+    color: #34d399;
+}
+
+.bento-btn-icon.wa:hover {
+    background: #10b981;
+    color: #ffffff;
+}
+
+/* Responsive Grid Breakpoints */
+@media (max-width: 1100px) {
+
+    .bento-span-7,
+    .bento-span-6,
+    .bento-span-5 {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .bento-span-7,
+    .bento-span-6,
+    .bento-span-5 {
+        grid-column: span 12;
+    }
+}
+
+@media (max-width: 480px) {
+    .studio-bento-card {
+        padding: 16px;
+    }
+
+    .bento-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-subtitle-text {
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+}
