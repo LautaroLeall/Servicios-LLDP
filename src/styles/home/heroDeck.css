@@ -1,0 +1,257 @@
+/* HERO DECK — Right Column 3D Interactive Flyer Deck Stage & Controls */
+
+.studio-hero-right {
+    position: relative;
+    perspective: 1200px;
+    min-width: 0;
+}
+
+.hero-deck-stage {
+    position: relative;
+    padding-top: 22px;
+}
+
+.deck-card-layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-radius: 24px;
+    background: rgba(15, 19, 32, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+    transition: all 0.35s ease;
+}
+
+.App.light .deck-card-layer {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+.layer-back-2 {
+    top: 0;
+    height: 110px;
+    transform: scale(0.9) translateY(-14px);
+    opacity: 0.38;
+}
+
+.layer-back-1 {
+    top: 8px;
+    height: 130px;
+    transform: scale(0.95) translateY(-6px);
+    opacity: 0.68;
+    padding: 9px 16px;
+    border-color: var(--deck-accent, rgba(34, 211, 238, 0.25));
+}
+
+.layer-peek-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.peek-num {
+    color: var(--deck-accent, #22d3ee);
+    font-weight: 800;
+}
+
+.deck-active-card {
+    position: relative;
+    z-index: 3;
+    border-radius: 24px;
+    padding: 18px;
+    background: rgba(12, 16, 28, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.App.light .deck-active-card {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(15, 23, 42, 0.1);
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.12);
+}
+
+.deck-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: nowrap;
+}
+
+.deck-flyer-meta {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+}
+
+.deck-flyer-number {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: rgba(6, 182, 212, 0.15);
+    color: var(--deck-accent, #22d3ee);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    flex-shrink: 0;
+}
+
+.deck-flyer-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--deck-accent, #22d3ee);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deck-flyer-seal {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--deck-accent, #22d3ee);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.App.light .deck-flyer-seal {
+    background: rgba(15, 23, 42, 0.05);
+    border-color: rgba(15, 23, 42, 0.1);
+}
+
+.deck-card-heading {
+    margin-bottom: 10px;
+}
+
+.deck-service-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.8vw, 1.24rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deck-mockup-viewport {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.deck-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: nowrap;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.deck-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.deck-arrow-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.deck-arrow-btn:hover {
+    background: var(--accent-primary);
+    color: #06070b;
+    border-color: var(--accent-primary);
+}
+
+.deck-counter-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    padding: 0 4px;
+    white-space: nowrap;
+}
+
+.deck-action-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.deck-icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.deck-icon-btn:hover {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.deck-icon-btn.wa-icon {
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.deck-icon-btn.wa-icon:hover {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.deck-quote-this-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 13px;
+    border-radius: 9px;
+    border: none;
+    background: linear-gradient(135deg, #06b6d4, #6366f1);
+    color: #ffffff;
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
