@@ -1,0 +1,85 @@
+/* MODAL SANDBOX — Browser Mockup Frame, Traffic Lights & URL Bar */
+
+.modal-mockup-sandbox {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(2, 10, 21, 0.55);
+}
+
+body.light .modal-mockup-sandbox {
+    border-color: rgba(0, 0, 0, 0.1);
+    background: #f8fafc;
+}
+
+.sandbox-browser-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 1.15rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+body.light .sandbox-browser-bar {
+    background: #f1f5f9;
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.browser-traffic-lights {
+    display: flex;
+    gap: 7px;
+}
+
+.traffic-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot-red {
+    background: #ef4444;
+}
+
+.dot-yellow {
+    background: #f59e0b;
+}
+
+.dot-green {
+    background: #22c55e;
+}
+
+.browser-url-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.75rem;
+    color: #cbd5e1;
+}
+
+body.light .browser-url-bar {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #334155;
+}
+
+.sandbox-interactive-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+body.light .sandbox-interactive-badge {
+    color: #0d6efd;
+}

@@ -1,0 +1,5 @@
+/* SERVICE DETAIL MODAL — MODULAR ARCHITECTURE */
+
+@import './modal/modalShell.css';
+@import './modal/modalSandbox.css';
+@import './modal/modalDossier.css';
