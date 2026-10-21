@@ -1,0 +1,209 @@
+/* 06. REVISIÓN DE PRESUPUESTO MOCKUP (AUDITORÍA DE DESARROLLO WEB) */
+
+.presupuesto-card-sheet {
+    position: relative;
+    z-index: 1;
+    background: rgba(15, 23, 42, 0.94);
+    border: 1px solid rgba(245, 158, 11, 0.38);
+    border-radius: 13px;
+    padding: 11px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.te-lo-reviso-stamp {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 7px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #090d16;
+    font-family: var(--font-mono);
+    font-size: 0.56rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    transform: rotate(2deg);
+    white-space: nowrap;
+    box-shadow: 0 6px 14px rgba(245, 158, 11, 0.35);
+}
+
+.presupuesto-card-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+    padding-right: 95px;
+    flex-wrap: nowrap;
+}
+
+.presupuesto-doc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 900;
+    color: #fbbf24;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.presupuesto-sub-pill {
+    padding: 1.5px 6px;
+    border-radius: 99px;
+    background: rgba(245, 158, 11, 0.14);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    font-size: 0.5rem;
+    font-weight: 700;
+    color: #fde68a;
+    white-space: nowrap;
+}
+
+.presupuesto-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5px;
+}
+
+.presupuesto-check-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 8px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.presupuesto-check-row:hover,
+.presupuesto-check-row.is-active {
+    background: rgba(245, 158, 11, 0.11);
+    border-color: rgba(245, 158, 11, 0.35);
+}
+
+.check-box-icon {
+    color: #fbbf24;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.check-box-icon.tone-ok {
+    color: #34d399;
+}
+
+.check-box-icon.tone-plus {
+    color: #38bdf8;
+}
+
+.check-box-icon.tone-save {
+    color: #fbbf24;
+}
+
+.check-item-info {
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    min-width: 0;
+}
+
+.check-item-title {
+    font-size: 0.62rem;
+    font-weight: 800;
+    color: #f8fafc;
+    flex-shrink: 0;
+}
+
+.check-item-note {
+    font-size: 0.54rem;
+    color: #94a3b8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.check-status-tag {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    font-weight: 800;
+    padding: 1.5px 6px;
+    border-radius: 99px;
+    background: rgba(16, 185, 129, 0.16);
+    color: #34d399;
+    flex-shrink: 0;
+}
+
+.check-status-tag.tone-ok {
+    background: rgba(16, 185, 129, 0.16);
+    color: #34d399;
+}
+
+.check-status-tag.tone-plus {
+    background: rgba(56, 189, 248, 0.18);
+    color: #7dd3fc;
+}
+
+.check-status-tag.tone-save {
+    background: rgba(245, 158, 11, 0.22);
+    color: #fde68a;
+}
+
+.presupuesto-compare-footer {
+    margin-top: 7px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.compare-other {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.52rem;
+}
+
+.cmp-lbl {
+    color: #94a3b8;
+}
+
+.cmp-bad {
+    color: #fca5a5;
+    font-weight: 700;
+    text-decoration: line-through;
+}
+
+.compare-lldp {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 7px;
+    border-radius: 99px;
+    background: rgba(16, 185, 129, 0.18);
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    color: #6ee7b7;
+    font-size: 0.52rem;
+    font-weight: 800;
+}
+
+@media (max-width: 480px) {
+    .web-browser-window {
+        width: 100%;
+    }
+
+    .web-mobile-device {
+        display: none;
+    }
+
+    .karla-address {
+        display: none;
+    }
+}
