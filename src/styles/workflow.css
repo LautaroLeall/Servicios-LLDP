@@ -1,0 +1,222 @@
+/* STUDIO WORKFLOW — 4-STEP CONNECTED ARCHITECTURE + QUALITY BANNER */
+
+.studio-workflow-section {
+    position: relative;
+}
+
+.studio-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.studio-process-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.studio-process-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--step-accent, #22d3ee);
+}
+
+.process-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.process-icon-orb {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--step-accent, #22d3ee);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.App.light .process-icon-orb {
+    background: rgba(15, 23, 42, 0.04);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+.process-step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--step-accent, #22d3ee);
+    letter-spacing: 0.06em;
+}
+
+.App.light .process-step-tag {
+    background: rgba(15, 23, 42, 0.05);
+}
+
+.process-step-title {
+    font-family: var(--font-display);
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.process-step-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+    flex: 1;
+}
+
+.process-step-footer {
+    height: 3px;
+    width: 100%;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+}
+
+.step-bar-fill {
+    display: block;
+    width: 45%;
+    height: 100%;
+    background: var(--step-accent, #22d3ee);
+    border-radius: 99px;
+    transition: width 0.35s ease;
+}
+
+.studio-process-card:hover .step-bar-fill {
+    width: 100%;
+}
+
+/* Pillars Banner */
+.studio-pillars-banner {
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 0.95fr 1.25fr;
+    gap: 32px;
+    align-items: center;
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
+.pillars-kicker {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent-primary);
+    margin-bottom: 8px;
+}
+
+.pillars-banner-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.pillars-banner-desc {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.pillars-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 13px;
+    border: none;
+    background: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+    color: #ffffff;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pillars-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(6, 182, 212, 0.35);
+}
+
+.pillars-banner-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.studio-pillar-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+}
+
+.App.light .studio-pillar-item {
+    background: rgba(15, 23, 42, 0.025);
+}
+
+.pillar-mini-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(6, 182, 212, 0.14);
+    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pillar-item-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.pillar-item-desc {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+@media (max-width: 1100px) {
+    .studio-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .studio-pillars-banner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .studio-process-grid,
+    .pillars-banner-right {
+        grid-template-columns: 1fr;
+    }
+
+    .studio-pillars-banner {
+        padding: 22px;
+    }
+}
