@@ -5,16 +5,30 @@ const AuroraMeshBackground = ({ isLight = false }) => {
     const containerRef = useRef(null);
 
     useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        // En pantallas táctiles (iOS/Android), no registrar listener para ahorrar 100% de CPU
+        if (!window.matchMedia('(pointer: fine)').matches) return;
+
+        let rafId = null;
         const handleMouseMove = (e) => {
-            if (!containerRef.current) return;
-            const x = (e.clientX / window.innerWidth) * 100;
-            const y = (e.clientY / window.innerHeight) * 100;
-            containerRef.current.style.setProperty('--cursor-x', `${x}%`);
-            containerRef.current.style.setProperty('--cursor-y', `${y}%`);
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => {
+                if (containerRef.current) {
+                    const x = (e.clientX / window.innerWidth) * 100;
+                    const y = (e.clientY / window.innerHeight) * 100;
+                    containerRef.current.style.setProperty('--cursor-x', `${x}%`);
+                    containerRef.current.style.setProperty('--cursor-y', `${y}%`);
+                }
+                rafId = null;
+            });
         };
 
         window.addEventListener('mousemove', handleMouseMove, { passive: true });
-        return () => window.removeEventListener('mousemove', handleMouseMove);
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            if (rafId) cancelAnimationFrame(rafId);
+        };
     }, []);
 
     return (
