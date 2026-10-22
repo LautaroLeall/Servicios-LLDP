@@ -11,14 +11,16 @@
 .aurora-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(110px);
+    filter: blur(100px);
     opacity: 0.42;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     will-change: transform;
 }
 
 .aurora-mesh-bg.is-light .aurora-orb {
     opacity: 0.22;
-    filter: blur(120px);
+    filter: blur(110px);
 }
 
 .orb-cyan {
@@ -122,4 +124,45 @@
 
 .aurora-mesh-bg.is-light .aurora-vignette {
     background: radial-gradient(circle at 50% 50%, transparent 65%, rgba(241, 245, 249, 0.6) 100%);
+}
+
+/* OPTIMIZACIÓN CRÍTICA PARA DISPOSITIVOS MÓVILES (iOS / Android) */
+@media (max-width: 768px),
+(hover: none) {
+    .aurora-orb {
+        filter: blur(48px);
+        opacity: 0.36;
+    }
+
+    .aurora-mesh-bg.is-light .aurora-orb {
+        filter: blur(52px);
+        opacity: 0.20;
+    }
+
+    .orb-cyan {
+        width: 75vw;
+        height: 75vw;
+        animation-duration: 36s;
+    }
+
+    .orb-indigo {
+        width: 70vw;
+        height: 70vw;
+        animation-duration: 40s;
+    }
+
+    .orb-emerald {
+        width: 65vw;
+        height: 65vw;
+        animation-duration: 38s;
+    }
+
+    /* Ocultar orb-cursor en pantallas táctiles para ahorrar 100% de GPU */
+    .orb-cursor {
+        display: none !important;
+    }
+
+    .architectural-grid {
+        background-size: 48px 48px;
+    }
 }
