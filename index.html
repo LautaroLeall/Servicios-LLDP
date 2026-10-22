@@ -21,6 +21,7 @@
   <!-- Favicon & App Icons (Logo Portafolio en public/Logo_LLDP.png) -->
   <link rel="icon" type="image/png" href="/Logo_LLDP.png" />
   <link rel="apple-touch-icon" href="/Logo_LLDP.png" />
+  <link rel="preload" as="image" href="/Logo_LLDP.png" />
 
   <!-- Open Graph / WhatsApp / LinkedIn / Facebook -->
   <meta property="og:type" content="website" />
@@ -44,12 +45,19 @@
     content="Tu proyecto web, hecho realidad. Páginas web, Sistemas de gestión, Tiendas online e Invitaciones digitales." />
   <meta name="twitter:image" content="https://servicios-lldp.vercel.app/Logo_LLDP.png" />
 
-  <!-- Google Fonts Optimizadas (No bloqueantes) -->
+  <!-- Google Fonts Optimizadas (100% No bloqueantes) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" />
   <link
     href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet" />
+  </noscript>
 
   <!-- Datos Estructurados (Schema.org JSON-LD) -->
   <script type="application/ld+json">
