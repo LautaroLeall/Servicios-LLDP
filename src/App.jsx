@@ -3,16 +3,33 @@ import { useEffect, useState, useMemo, lazy, Suspense } from 'react'
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
 import { FaWhatsapp } from 'react-icons/fa'
 
-// Secciones de LLDP Studio — Mis Servicios
+// Secciones Críticas (Above-The-Fold: Carga instantánea en <0.3s)
 import TopNavbar from './components/TopNavbar'
 import Home from './components/Home'
-import ServicesGrid from './components/ServicesGrid'
-import ServicesCarousel from './components/ServicesCarousel'
-import Workflow from './components/Workflow'
-import Contact from './components/Contact'
 import AuroraMeshBackground from './components/ui/AuroraMeshBackground'
+import Preloader from './components/ui/Preloader'
 
+// Secciones Secundarias (Below-The-Fold: Lazy Loading para eliminar la pantalla negra en móviles)
+const ServicesGrid = lazy(() => import('./components/ServicesGrid'))
+const ServicesCarousel = lazy(() => import('./components/ServicesCarousel'))
+const Workflow = lazy(() => import('./components/Workflow'))
+const Contact = lazy(() => import('./components/Contact'))
 const ServiceDetailModal = lazy(() => import('./components/ServiceDetailModal'))
+
+const SectionSkeleton = () => (
+  <div className="container py-5 d-flex justify-content-center align-items-center" style={{ minHeight: '260px' }}>
+    <div
+      style={{
+        width: '30px',
+        height: '30px',
+        borderRadius: '50%',
+        border: '2px solid rgba(6, 182, 212, 0.15)',
+        borderTopColor: '#06b6d4',
+        animation: 'studioInitialSpin 0.8s linear infinite'
+      }}
+    />
+  </div>
+)
 
 import { useTheme } from './hooks/useTheme'
 import { useLanguage } from './hooks/useLanguage'
@@ -29,6 +46,15 @@ function App() {
   const [selectedServiceId, setSelectedServiceId] = useState(null)
   const [activeCarouselIndex, setActiveCarouselIndex] = useState(0)
   const [preselectedQuoteServiceId, setPreselectedQuoteServiceId] = useState('paginas-web')
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Mantener el loader activo un breve instante para apreciar el efecto 3D
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1100)
+    return () => clearTimeout(timer)
+  }, [])
 
   const services = useMemo(() => getServicesData(language), [language])
 
@@ -47,6 +73,23 @@ function App() {
   useEffect(() => {
     document.documentElement.lang = language
   }, [language])
+
+  // Precarga inteligente en segundo plano cuando el navegador esté libre (Idle)
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const preloadBelowFold = () => {
+      import('./components/ServicesGrid')
+      import('./components/ServicesCarousel')
+      import('./components/Workflow')
+      import('./components/Contact')
+    }
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(preloadBelowFold, { timeout: 2000 })
+    } else {
+      setTimeout(preloadBelowFold, 1000)
+    }
+  }, [])
 
   const handleSelectService = (service) => {
     if (!service) return
@@ -75,6 +118,11 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
+      {/* Preloader 3D Holográfico con Salida Suave */}
+      <AnimatePresence>
+        {isLoading && <Preloader />}
+      </AnimatePresence>
+
       {/* Barra superior de progreso */}
       <motion.div
         className="scroll-progress-bar"
@@ -100,32 +148,40 @@ function App() {
         </section>
 
         <section id="services">
-          <ServicesGrid
-            services={services}
-            onSelectService={handleSelectService}
-            onStartQuoteWithService={handleStartQuoteWithService}
-          />
+          <Suspense fallback={<SectionSkeleton />}>
+            <ServicesGrid
+              services={services}
+              onSelectService={handleSelectService}
+              onStartQuoteWithService={handleStartQuoteWithService}
+            />
+          </Suspense>
         </section>
 
         <section id="showcase">
-          <ServicesCarousel
-            services={services}
-            activeIndex={activeCarouselIndex}
-            onChangeIndex={setActiveCarouselIndex}
-            onOpenDetail={handleSelectService}
-            onStartQuoteWithService={handleStartQuoteWithService}
-          />
+          <Suspense fallback={<SectionSkeleton />}>
+            <ServicesCarousel
+              services={services}
+              activeIndex={activeCarouselIndex}
+              onChangeIndex={setActiveCarouselIndex}
+              onOpenDetail={handleSelectService}
+              onStartQuoteWithService={handleStartQuoteWithService}
+            />
+          </Suspense>
         </section>
 
         <section id="workflow">
-          <Workflow />
+          <Suspense fallback={<SectionSkeleton />}>
+            <Workflow />
+          </Suspense>
         </section>
 
         <section id="contact" className="pb-5">
-          <Contact
-            services={services}
-            preselectedServiceId={preselectedQuoteServiceId}
-          />
+          <Suspense fallback={<SectionSkeleton />}>
+            <Contact
+              services={services}
+              preselectedServiceId={preselectedQuoteServiceId}
+            />
+          </Suspense>
         </section>
       </main>
 
