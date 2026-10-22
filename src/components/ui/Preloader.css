@@ -1,0 +1,225 @@
+/* PRELOADER 3D HOLOGRÁFICO — Gyroscope Orbit, Floating Core & Laser Track */
+
+.preloader-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9999999;
+    background: #06070b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif;
+    color: #f8fafc;
+}
+
+/* 3D Gyroscope Viewport */
+.gyro-stage {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 900px;
+    -webkit-perspective: 900px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+/* Ambient Pulsing Glow */
+.gyro-ambient-glow {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.42) 0%, rgba(99, 102, 241, 0.28) 45%, transparent 72%);
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+    animation: gyroGlowPulse 2.4s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+/* Orbital Rings */
+.gyro-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+.ring-cyan {
+    border: 2px solid transparent;
+    border-top: 2.5px solid #22d3ee;
+    border-bottom: 2.5px solid rgba(34, 211, 238, 0.25);
+    box-shadow: 0 0 14px rgba(34, 211, 238, 0.5);
+    animation: gyroOrbitOne 2s linear infinite;
+}
+
+.ring-indigo {
+    inset: 8px;
+    border: 2px solid transparent;
+    border-left: 2.5px solid #818cf8;
+    border-right: 2.5px solid rgba(129, 140, 248, 0.25);
+    box-shadow: 0 0 14px rgba(129, 140, 248, 0.45);
+    animation: gyroOrbitTwo 2.6s linear infinite reverse;
+}
+
+.ring-emerald {
+    inset: 16px;
+    border: 1.5px dashed rgba(16, 185, 129, 0.55);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+    animation: gyroOrbitThree 3.8s linear infinite;
+}
+
+/* Central 3D Floating Glass Emblem */
+.gyro-emblem-core {
+    position: relative;
+    z-index: 10;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: rgba(11, 16, 28, 0.92);
+    border: 1px solid rgba(34, 211, 238, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.85),
+        0 0 24px rgba(6, 182, 212, 0.45),
+        inset 0 0 12px rgba(255, 255, 255, 0.08);
+    animation: gyroFloatCore 2.6s ease-in-out infinite alternate;
+    -webkit-transform: translate3d(0, 0, 15px);
+    transform: translate3d(0, 0, 15px);
+}
+
+.gyro-emblem-img {
+    border-radius: 10px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Studio Branding & Professional Specialty */
+.preloader-meta {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.preloader-title {
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+    font-weight: 800;
+    color: #f8fafc;
+    text-transform: uppercase;
+    text-shadow: 0 0 24px rgba(255, 255, 255, 0.22);
+}
+
+.preloader-subtitle-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-family: var(--font-mono, 'Geist Mono', monospace);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent-cyan-bright, #22d3ee);
+    text-transform: uppercase;
+}
+
+.preloader-star {
+    font-size: 0.62rem;
+    color: rgba(255, 255, 255, 0.38);
+}
+
+/* High-Tech Laser Progress Bar */
+.gyro-laser-track {
+    width: 140px;
+    height: 3px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.06);
+    margin-top: 14px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gyro-laser-beam {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background: linear-gradient(90deg, transparent, #22d3ee, #6366f1, transparent);
+    border-radius: 99px;
+    animation: gyroLaserSlide 1.4s ease-in-out infinite;
+}
+
+/* 3D Keyframe Animations */
+@keyframes gyroOrbitOne {
+    0% {
+        transform: rotateX(65deg) rotateY(18deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(65deg) rotateY(18deg) rotateZ(360deg);
+    }
+}
+
+@keyframes gyroOrbitTwo {
+    0% {
+        transform: rotateX(45deg) rotateY(-45deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(45deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes gyroOrbitThree {
+    0% {
+        transform: rotateX(80deg) rotateY(25deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(80deg) rotateY(25deg) rotateZ(360deg);
+    }
+}
+
+@keyframes gyroFloatCore {
+    0% {
+        transform: translate3d(0, 0, 10px) scale(0.97);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.75), 0 0 18px rgba(6, 182, 212, 0.35);
+    }
+
+    100% {
+        transform: translate3d(0, -6px, 20px) scale(1.05);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(99, 102, 241, 0.55);
+    }
+}
+
+@keyframes gyroGlowPulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(0.92);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes gyroLaserSlide {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(250%);
+    }
+}
